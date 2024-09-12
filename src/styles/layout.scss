@@ -1,0 +1,12 @@
+.layout{
+	height: 100vh;
+	width: 100%;
+	padding: 32px 40px;
+	box-sizing: border-box;
+	background-image: url('../assets/icons/background.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	display: flex;
+}

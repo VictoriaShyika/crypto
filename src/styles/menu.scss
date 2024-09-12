@@ -1,0 +1,52 @@
+.menu {
+	width: 246px;
+	background-color: #151623;
+	padding: 40px 10px 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow: scroll;
+
+	&__logo {
+		height: 40px;
+		width: 112px;
+		align-self: center;
+	}
+
+	&__link-block {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		flex: 1;
+		padding: 52px 0 68px;
+	}
+	
+	&__link {
+		display: flex;
+		align-items: center;
+		height: 44px;
+		gap: 8px;
+		font-size: 16px;
+		color: #FFFFFF;
+		opacity: 70%;
+		text-decoration: none;
+
+		img {
+			height: 24px;
+			width: 24px;
+		}
+		&_doc {
+			margin-top: auto;
+		}
+
+		&:hover {
+			background: #232330;
+		}
+	}
+
+	&__social-media {
+		display: flex;
+		gap: 16px;
+		align-self: center;
+	}
+}
