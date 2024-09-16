@@ -1,3 +1,6 @@
+const WRONG_NETWORK_LIST = ["0x38"] ('Binance Smart Chain Mainnet').
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
