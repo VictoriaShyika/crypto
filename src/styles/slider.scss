@@ -1,0 +1,44 @@
+.slider {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 13px;
+  order: 1;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 8px;
+	}
+
+	&__level {
+		display: flex;
+		justify-content: space-between;
+		color: $color-text;
+		opacity: 60%;
+		font-family: pixelmix;
+		font-size: $font-size-xxs;
+		font-weight: 400;
+		line-height: 18px;
+		text-align: right;
+	}
+
+	&__component {
+		position: relative;
+		height: 5px;
+		background-color: $color-shadow-secondary;
+    box-shadow: -3px 0 0 0 $color-shadow-secondary, 4px 0 0 0 $color-shadow-secondary, 0 -3px 0 0 $color-shadow-secondary, 0 3px 0 0 $color-shadow-secondary;
+    margin: 3px;
+
+	}
+
+	&__value {
+		position: absolute;
+		height: 5px;
+		left: 0;
+		bottom: 0;
+		background-color: $color-text-secondary;
+    box-shadow: box-shadow($color-text-secondary, 3px);
+  }
+}

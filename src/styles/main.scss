@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Pixel Sans Serif Condensed";
+  src: url("../assets/fonts/Pixel\ Sans\ Serif\ Condensed.ttf");
+};
+
+@font-face {
+  font-family: "pixelmix";
+  src: url("../assets/fonts/pixelmix.ttf");
+};
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    font-family: "Pixel Sans Serif Condensed", sans-serif;
+    margin: 0;
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: $color-background;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: pixelmix;
+}
+
+.close {
+  background-image: url(../assets/icons/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 33px;
+  width: 33px;
+  box-shadow: box-shadow($color-border, 3.5px);
+  &:hover {
+    opacity: 50%;
+  }
+}
+
+.modal {
+  &__overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  &__content {
+    box-shadow: box-shadow($color-border, 6px);
+    background: $color-modal-bg;
+    width: 820px;
+    height: 414px;
+    color: $color-text;
+    padding: 24px 26px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      width: 80%;
+      height: 80%;
+    };
+  }
+
+  &__header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-border;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 400;
+    
+  }
+}
+
+.dropdown {
+  z-index: 10;
+  position: absolute;
+  width: 306px;
+  height: 175px;
+  box-sizing: border-box;
+  background-color: $color-modal-bg;
+  box-shadow: box-shadow($color-border, 6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  top: 104px;
+  right: 40px;
+  padding: 24px 24px 16px;
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.block {
+	background-color: $color-modal-bg;
+	position: relative;
+	margin: 0px 3px;
+	box-shadow: 23px -11px 0px -20px $color-modal-bg, -23px -11px 0px -20px $color-modal-bg;
+  height: 100%;
+}
+
+.network {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-size: $font-size-xxs;
+	color: $color-text;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    &:hover{
+      opacity: 50%;
+    }
+  }
+}
+
+$colors: (
+  'violet': $color-text-secondary,
+  'green': $color-green,
+);
+
+@each $name, $color in $colors {
+  .item-#{$name} {
+    color: $color;
+  }
+}

@@ -1,11 +1,25 @@
 .menu {
 	width: 246px;
-	background-color: #151623;
+  min-width: 246px;
+	background-color: $color-modal-bg;
 	padding: 40px 10px 32px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	overflow: scroll;
+
+	@media screen and (max-width: $breakpoint-lg) {
+		display: none;
+	}
+
+  .close {
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+  }
 
 	&__logo {
 		height: 40px;
@@ -26,21 +40,29 @@
 		align-items: center;
 		height: 44px;
 		gap: 8px;
-		font-size: 16px;
-		color: #FFFFFF;
+		font-size: $font-size-s;
+		color: $color-text;
 		opacity: 70%;
 		text-decoration: none;
+		padding: 7px 12px;
+		box-sizing: border-box;
+
+    &_current {
+      color: $color-text-secondary;
+    }
 
 		img {
 			height: 24px;
 			width: 24px;
-		}
+    }
+
 		&_doc {
 			margin-top: auto;
 		}
 
 		&:hover {
-			background: #232330;
+			background: $color-border;
+			box-shadow: box-shadow($color-border, 3px);
 		}
 	}
 
@@ -48,5 +70,40 @@
 		display: flex;
 		gap: 16px;
 		align-self: center;
+
+    a {
+      background-color: $color-border;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 29px;
+      height: 29px;
+			box-shadow: box-shadow($color-border, 3px);
+    }
+
+    a:hover {
+      opacity: 50%;
+    }
 	}
+
+  &__mobile {
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    
+    .menu__header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .close {
+      display: block;
+    }
+  }
 }

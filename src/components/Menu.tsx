@@ -1,45 +1,36 @@
-import TelegramSvg from "../assets/icons/Telegram.svg";
-import XSvg from "../assets/icons/X.svg";
-import DiscordSvg from "../assets/icons/Discord.svg";
-
-import ProfileSvg from "../assets/icons/Profile.svg";
-import ReferralsSvg from "../assets/icons/Referrals.svg";
-import PetsSvg from "../assets/icons/Pets.svg";
-import BattleSvg from "../assets/icons/Battle.svg";
-import FriendsSvg from "../assets/icons/Friends.svg";
-import StakingSvg from "../assets/icons/Staking.svg";
-
 import LogoSvg from "../assets/icons/Logo.svg";
+import {MenuItems, SocialMedia} from "../constants/menu";
+import {Button} from "./shared/Button";
 
+interface MenuProps {
+	isOpen: boolean,
+	handleMenuOpen: () => void
+}
 
-const MenuItems = [
-	{name:"Profile", icon: ProfileSvg},
-	{name:"Referrals", icon: ReferralsSvg},
-	{name:"Pets", icon: PetsSvg},
-	{name:"Battle", icon: BattleSvg},
-	{name:"Friends", icon:  FriendsSvg},
-	{name:"Staking", icon:  StakingSvg},
-];
+export const Menu = ({isOpen, handleMenuOpen} : MenuProps) => {
+	const handleLinkClick = () => {
+		if (isOpen) handleMenuOpen()
+	};
 
-const SocialMedia = [
-	{icon: TelegramSvg, href:'/#'},
-	{icon: XSvg, href:'/#'},
-	{icon: DiscordSvg, href:'/#'},
-];
-
-export const Menu = () => {
   return (
-	<div className="menu">
-		<img className="menu__logo" src={LogoSvg} />
+	<div className={`menu ${isOpen && "menu__mobile"}`}>
+        <div className="menu__header">
+            <img className="menu__logo" src={LogoSvg} />
+            <Button className="close" onClick={handleMenuOpen}/>
+        </div>
 
 		<div className="menu__link-block">
-			{MenuItems.map((item)=> <a href="/#" className="menu__link"><img src={item.icon}/><div>{item.name}</div></a>)}
+			{MenuItems.map((item) => 
+				<a href="/#" className={`menu__link ${item.name === 'Referrals' && "menu__link_current"}`} key={item.name} onClick={handleLinkClick}>
+					<img src={item.icon}/>
+					<div>{item.name}</div>
+				</a>)}
+
 			<a href="/#" className="menu__link menu__link_doc"><div>Game Dock</div></a>
 		</div>
 
-		
 		<div className="menu__social-media">
-			{SocialMedia.map((link)=><a href={link.href}><img src={link.icon}/></a>)}
+			{SocialMedia.map((link)=><a href={link.href} key={link.icon} style={{backgroundImage: `url(${link.icon})`}}></a>)}
 		</div>
 	</div>
   )

@@ -1,0 +1,25 @@
+$color-background: #090A17;
+$color-text: #FFFFFF;
+$color-border: #232330;
+$color-shadow:#474756;
+$color-shadow-secondary: #303143;
+$color-modal-bg: #151623;
+$color-text-secondary: #B364D8;
+$color-red: #FF3D3D;
+$color-green:#83D987;
+
+$font-size-xxs: 12px;
+$font-size-xs: 14px;
+$font-size-s: 16px;
+$font-size-m: 18px;
+$font-size-l: 28px;
+
+$breakpoint-sm: 600px;
+$breakpoint-md: 700px;
+$breakpoint-lg: 1000px;
+$breakpoint-xl: 1200px;
+
+@function box-shadow($color, $offset) {
+	@return (-$offset) 0 0 0 $color, $offset 0 0 0 $color, 0 (-$offset) 0 0 $color, 0 $offset 0 0 $color;
+  }
+  

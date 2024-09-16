@@ -1,0 +1,69 @@
+.wallet {
+	&__description {
+		font-family: "pixelmix";
+		font-size: $font-size-xs;
+		font-weight: 400;
+		opacity: 60%;
+		line-height: 24px;
+	}
+	
+	&__connect-wrapper {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+		gap: 16px;
+
+		@media screen and (max-width: $breakpoint-sm) {
+			flex-direction: column;
+    }
+  }
+	
+	&__connect-item {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		box-shadow: box-shadow($color-border, 6px);
+		margin: 6px;
+
+		img {
+		  width: 80px;
+		  height: 100%;
+		  align-self: center;
+		  justify-self: center;
+		  @media screen and (max-width: $breakpoint-sm) {
+			width: 40px;
+		  };
+    }
+		@media screen and (max-width: $breakpoint-sm) {
+			height: 100%;
+		}
+	}
+	
+	&__connect-block {
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+		padding: 0 18px 18px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+	
+	&__connect-button {
+		font-family:  "IBM Plex Mono";
+		font-size: $font-size-s;
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		cursor: pointer;
+
+		&_icon {
+		  background-image: url(../assets/icons/Arrow.svg);
+		  height: 12px;
+		  width: 12px;
+    }
+	&:hover{
+		opacity: 50%;
+	}
+  }
+}
